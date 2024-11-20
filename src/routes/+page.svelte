@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount, onDestroy } from 'svelte';
-    import { getVirtualPinData } from '$lib/blynk';
+    import { getVirtualPinData, setVirtualPinData } from '$lib/blynk';
   
     let pinValues = {
       v1: 0,
@@ -22,9 +22,18 @@
       }
     }
   
+    async function updateV3(value: number) {
+      try {
+        await setVirtualPinData('v3', value);
+        pinValues.v3 = value;
+      } catch (error) {
+        console.error('Error setting data:', error);
+      }
+    }
+  
     onMount(() => {
       fetchData(); // Initial fetch
-      interval = setInterval(fetchData, 1000); // Fetch every 5 seconds
+      interval = setInterval(fetchData, 5000); // Fetch every 5 seconds
     });
   
     onDestroy(() => {
@@ -38,4 +47,5 @@
     <p>Pin Value (v2): {pinValues.v2}</p>
     <p>Pin Value (v3): {pinValues.v3}</p>
     <p>Pin Value (v4): {pinValues.v4}</p>
+    <button on:click={() => updateV3(pinValues.v3 === 1 ? 0 : 1)}>Toggle v3</button>
   </main>
