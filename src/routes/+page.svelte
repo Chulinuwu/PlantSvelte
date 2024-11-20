@@ -1,5 +1,5 @@
-<script>
-    import { onMount } from 'svelte';
+<script lang="ts">
+    import { onMount, onDestroy } from 'svelte';
     import { getVirtualPinData } from '$lib/blynk';
   
     let pinValues = {
@@ -9,7 +9,9 @@
       v4: 0
     };
   
-    onMount(async () => {
+    let interval: number;
+  
+    async function fetchData() {
       try {
         pinValues.v1 = await getVirtualPinData('v1');
         pinValues.v2 = await getVirtualPinData('v2');
@@ -18,6 +20,15 @@
       } catch (error) {
         console.error('Error fetching data:', error);
       }
+    }
+  
+    onMount(() => {
+      fetchData(); // Initial fetch
+      interval = setInterval(fetchData, 1000); // Fetch every 5 seconds
+    });
+  
+    onDestroy(() => {
+      clearInterval(interval); // Clear interval on component destroy
     });
   </script>
   
