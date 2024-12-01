@@ -1,38 +1,51 @@
-# sv
+# Smart Farm Plant Monitoring System - Frontend
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+This is the frontend repository for the **Smart Farm Plant Monitoring System**, built using SvelteKit. It provides an intuitive, responsive interface for controlling and monitoring your smart farm system. 
 
-## Creating a project
+---
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Setup Instructions
 
-```bash
-# create a new project in the current directory
-npx sv create
+1. **Clone the Backend Repository**
+   - Clone the backend repository and set it up by following the instructions in its `README.md`:
+     ```bash
+     git clone https://github.com/Chulinuwu/Smart_Farm_Plant_Monitoring_System
+     cd Smart_Farm_Plant_Monitoring_System
+     ```
 
-# create a new project in my-app
-npx sv create my-app
-```
+2. **Clone the Frontend Repository**
+   - Clone this frontend repository:
+     ```bash
+     git clone https://github.com/YourUsername/YourFrontendRepoName.git
+     cd YourFrontendRepoName
+     ```
 
-## Developing
+3. **Install Dependencies**
+   - Navigate to the project directory and install the required dependencies:
+     ```bash
+     npm install
+     ```
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+4. **Run the Development Server**
+   - Start the development server:
+     ```bash
+     npm run dev
+     ```
 
-```bash
-npm run dev
+   - The app will be available at `http://localhost:5173` (or the port shown in your terminal).
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+---
 
-## Building
+## Notes
 
-To create a production version of your app:
+- Ensure that the backend server is running before using the frontend application.
+- This project is fully responsive and optimized for different screen sizes.
 
-```bash
-npm run build
-```
+---
 
-You can preview the production build with `npm run preview`.
+## Contributions
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Contributions to improve functionality, design, or documentation are welcome! Feel free to fork the repository and submit a pull request.
+
+---
+
