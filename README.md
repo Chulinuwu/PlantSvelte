@@ -2,6 +2,12 @@
 
 This is the frontend repository for the **Smart Farm Plant Monitoring System**, built using SvelteKit. It provides an intuitive, responsive interface for controlling and monitoring your smart farm system. 
 
+![Smart Farm Plant Monitoring System](src/asset/image/image1.png)
+<div style="display: flex; justify-content: space-around;">
+  <img src="src/asset/image/image2.png" alt="Smart Farm Plant Monitoring System" style="width: 45%;">
+  <img src="src/asset/image/image3.png" alt="Smart Farm Plant Monitoring System" style="width: 45%;">
+</div>
+
 ---
 
 ## Setup Instructions
